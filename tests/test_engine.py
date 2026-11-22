@@ -92,3 +92,36 @@ def test_deterministic():
     b, _ = run(df.to_csv(index=False), target="target")
     assert a["test"]["primary"] == b["test"]["primary"]
     assert a["winner"]["id"] == b["winner"]["id"]
+
+
+def _noisy(n=500, seed=5):
+    rng = np.random.default_rng(seed)
+    cols = {f"x{i}": rng.normal(size=n).round(3) for i in range(4)}
+    return rng, n, cols
+
+
+def test_leak_caught_with_many_classes():
+    rng, n, cols = _noisy()
+    y = rng.choice(list("abcdefg"), n)
+    cols["y"] = y
+    flip = rng.random(n) < 0.01
+    cols["recorded"] = np.where(flip, rng.permutation(y), y)
+    r, _ = run(to_csv(cols), target="y")
+    assert "recorded" in [l["column"] for l in r["leaks"]]
+
+
+def test_leak_caught_for_a_number():
+    rng, n, cols = _noisy()
+    y = (cols["x0"] * 3 + rng.normal(size=n)).round(3)
+    cols["y"] = y
+    cols["recorded"] = (y * (1 + rng.normal(0, 0.01, n))).round(3)
+    r, _ = run(to_csv(cols), target="y")
+    assert "recorded" in [l["column"] for l in r["leaks"]]
+
+
+def test_strong_but_honest_column_is_not_a_leak():
+    rng, n, cols = _noisy()
+    x = cols["x0"]
+    cols["y"] = np.where(x + rng.normal(0, 0.8, n) > 0, "up", "down")
+    r, _ = run(to_csv(cols), target="y")
+    assert r["leaks"] == []

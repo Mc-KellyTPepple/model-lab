@@ -284,20 +284,39 @@ def _imbalance(y: np.ndarray, classes) -> list[dict]:
 
 
 def _leak_scan(d: dict, y: np.ndarray, kinds: dict, task: str, prim: str) -> tuple[list[dict], float]:
-    """One column at a time: if a tiny tree on a single column nearly solves the task, flag it."""
-    scoring = {"accuracy": "accuracy", "balanced_accuracy": "balanced_accuracy", "r2": "r2"}[prim]
+    """One column at a time: if that column alone nearly gives the answer, flag it.
+
+    Numbers are tried with a tree of up to 24 leaves (enough for a noisy copy of a number, or a handful of classes).
+    Categories are tried with a plain lookup: the most common answer (or the average) for each category.
+    Both are scored by 3-fold cross-validation, so a column cannot pass by memorising rows."""
     cv = 3
     if task == "classification" and np.bincount(y).min() < cv:
         return [], 0.0
+    splitter = StratifiedKFold(cv, shuffle=True, random_state=SEED) if task == "classification" else KFold(cv, shuffle=True, random_state=SEED)
+    folds = list(splitter.split(np.zeros(len(y)), y if task == "classification" else None))
+    leaf = max(3, int(0.01 * len(y)))
     out = []
     for col, kind in kinds.items():
-        p = Prep({col: kind}).fit(d)
-        X = p.transform(d)
-        m = DecisionTreeClassifier(max_depth=3, random_state=SEED) if task == "classification" else DecisionTreeRegressor(max_depth=3, random_state=SEED)
+        vals = []
         try:
-            s = float(cross_val_score(m, X, y, cv=cv, scoring=scoring).mean())
+            if kind == "categorical":
+                lv = np.array(["" if is_missing(v) else str(v).strip() for v in d[col]], dtype=object)
+                for a, b in folds:
+                    table = {}
+                    for k in set(lv[a]):
+                        ya = y[a][lv[a] == k]
+                        table[k] = int(np.bincount(ya).argmax()) if task == "classification" else float(ya.mean())
+                    default = int(np.bincount(y[a]).argmax()) if task == "classification" else float(y[a].mean())
+                    pred = np.array([table.get(k, default) for k in lv[b]])
+                    vals.append(score(task, prim, y[b], pred))
+            else:
+                X = Prep({col: kind}).fit(d).transform(d)
+                for a, b in folds:
+                    m = (DecisionTreeClassifier if task == "classification" else DecisionTreeRegressor)(max_leaf_nodes=24, min_samples_leaf=leaf, random_state=SEED)
+                    vals.append(score(task, prim, y[b], m.fit(X[a], y[a]).predict(X[b])))
         except Exception:
             continue
+        s = float(np.mean(vals))
         if s >= LEAK_SCORE:
             out.append({"column": col, "score": s, "note": "This column alone almost gives the answer. If it is only known after the outcome happens, a model using it would look perfect and be useless."})
     return sorted(out, key=lambda x: -x["score"]), 0.0

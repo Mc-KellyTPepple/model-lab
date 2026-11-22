@@ -63,7 +63,7 @@ def _frame_openml(spec):
     if oml == "__sklearn_california__":
         d = fetch_california_housing(as_frame=True)
         return d.frame, d.frame.columns[-1], task
-    d = fetch_openml(oml, version=1, as_frame=True, parser="auto")
+    d = fetch_openml(oml, version=1, as_frame=True, parser="liac-arff")
     df = d.frame.copy()
     tcol = d.target.name if hasattr(d.target, "name") and d.target.name else df.columns[-1]
     return df, tcol, task
