@@ -26,7 +26,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 12.0
+     "seconds": 7.1
     },
     {
      "seed": 2,
@@ -48,7 +48,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 13.8
+     "seconds": 8.3
     },
     {
      "seed": 3,
@@ -70,7 +70,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 13.5
+     "seconds": 8.1
     }
    ]
   },
@@ -100,7 +100,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 8.4
+     "seconds": 5.1
     },
     {
      "seed": 2,
@@ -122,7 +122,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 8.4
+     "seconds": 5.1
     },
     {
      "seed": 3,
@@ -144,7 +144,423 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 8.5
+     "seconds": 5.1
+    }
+   ]
+  },
+  {
+   "dataset": "blood-transfusion",
+   "task": "classification",
+   "rows": 748,
+   "columns": 5,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "tree",
+     "claimed": 0.587962962962963,
+     "lo": 0.5037452813390313,
+     "hi": 0.6850650012137605,
+     "outer": 0.6198253723677453,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6500770416024653,
+     "regret": 0.030251669234720002,
+     "gap": 0.031862409404782244,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 5.8
+    },
+    {
+     "seed": 2,
+     "winner": "tree",
+     "claimed": 0.6489197530864197,
+     "lo": 0.5416396103896104,
+     "hi": 0.7570035825118656,
+     "outer": 0.597431946584489,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6615819209039548,
+     "regret": 0.0641499743194659,
+     "gap": 0.051487806501930744,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 5.9
+    },
+    {
+     "seed": 3,
+     "winner": "tree",
+     "claimed": 0.6419182083739046,
+     "lo": 0.5423919252044253,
+     "hi": 0.75,
+     "outer": 0.6922448979591838,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6922448979591838,
+     "regret": 0.0,
+     "gap": 0.050326689585279194,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 1
+     },
+     "leak_caught": true,
+     "seconds": 6.1
+    }
+   ]
+  },
+  {
+   "dataset": "phoneme",
+   "task": "classification",
+   "rows": 5404,
+   "columns": 6,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 0.8346923982966385,
+     "lo": 0.7910553075396826,
+     "hi": 0.8745932503906719,
+     "outer": 0.8343546306355242,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.8547112642585551,
+     "regret": 0.020356633623030973,
+     "gap": 0.0003377676611143743,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 10.1
+    },
+    {
+     "seed": 2,
+     "winner": "forest",
+     "claimed": 0.8591269841269842,
+     "lo": 0.8185057499863564,
+     "hi": 0.897221887065637,
+     "outer": 0.8503392599866388,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.8554724285863765,
+     "regret": 0.00513316859973767,
+     "gap": 0.008787724140345343,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 10.3
+    },
+    {
+     "seed": 3,
+     "winner": "boosting",
+     "claimed": 0.8688804324846728,
+     "lo": 0.830416625783627,
+     "hi": 0.9068841264456936,
+     "outer": 0.8452380952380952,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.8487301587301588,
+     "regret": 0.0034920634920635463,
+     "gap": 0.023642337246577605,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 10.0
+    }
+   ]
+  },
+  {
+   "dataset": "spambase",
+   "task": "classification",
+   "rows": 4601,
+   "columns": 58,
+   "runs": [
+    {
+     "seed": 1,
+     "error": "DataError: Too many columns (58; max 40).",
+     "seconds": 0.1
+    },
+    {
+     "seed": 2,
+     "error": "DataError: Too many columns (58; max 40).",
+     "seconds": 0.1
+    },
+    {
+     "seed": 3,
+     "error": "DataError: Too many columns (58; max 40).",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "dataset": "kc1",
+   "task": "classification",
+   "rows": 2109,
+   "columns": 22,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 0.5806956521739131,
+     "lo": 0.5184801969724304,
+     "hi": 0.643038582796195,
+     "outer": 0.627398436009918,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.627398436009918,
+     "regret": 0.0,
+     "gap": 0.0467027838360049,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 12.4
+    },
+    {
+     "seed": 2,
+     "winner": "boosting",
+     "claimed": 0.5989489874391182,
+     "lo": 0.5381435964403226,
+     "hi": 0.6613271256982808,
+     "outer": 0.6645603954030378,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6645603954030378,
+     "regret": 0.0,
+     "gap": 0.06561140796391962,
+     "covered": false,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 12.5
+    },
+    {
+     "seed": 3,
+     "winner": "boosting",
+     "claimed": 0.6682599503630848,
+     "lo": 0.5975192658381343,
+     "hi": 0.7418272500420205,
+     "outer": 0.6194775357385978,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6194775357385978,
+     "regret": 0.0,
+     "gap": 0.04878241462448707,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 12.4
+    }
+   ]
+  },
+  {
+   "dataset": "ilpd",
+   "task": "classification",
+   "rows": 583,
+   "columns": 11,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 0.5387931034482758,
+     "lo": 0.43712121212121213,
+     "hi": 0.638609022556391,
+     "outer": 0.588,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.608,
+     "regret": 0.020000000000000018,
+     "gap": 0.049206896551724166,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 6.7
+    },
+    {
+     "seed": 2,
+     "winner": "boosting",
+     "claimed": 0.5301724137931034,
+     "lo": 0.42877870813397134,
+     "hi": 0.6364060819166687,
+     "outer": 0.588,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.588,
+     "regret": 0.0,
+     "gap": 0.05782758620689654,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 6.6
+    },
+    {
+     "seed": 3,
+     "winner": "tree",
+     "claimed": 0.6433308769344142,
+     "lo": 0.5258595453444238,
+     "hi": 0.7518796992481203,
+     "outer": 0.6303158223889931,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6303158223889931,
+     "regret": 0.0,
+     "gap": 0.013015054545421068,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 6.2
+    }
+   ]
+  },
+  {
+   "dataset": "qsar-biodeg",
+   "task": "classification",
+   "rows": 1055,
+   "columns": 42,
+   "runs": [
+    {
+     "seed": 1,
+     "error": "DataError: Too many columns (42; max 40).",
+     "seconds": 0.0
+    },
+    {
+     "seed": 2,
+     "error": "DataError: Too many columns (42; max 40).",
+     "seconds": 0.0
+    },
+    {
+     "seed": 3,
+     "error": "DataError: Too many columns (42; max 40).",
+     "seconds": 0.0
+    }
+   ]
+  },
+  {
+   "dataset": "banknote",
+   "task": "classification",
+   "rows": 1372,
+   "columns": 5,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "outer": 0.9927184466019418,
+     "baseline_outer": 0.5703883495145631,
+     "best_candidate_outer": 0.9951456310679612,
+     "regret": 0.0024271844660194164,
+     "gap": 0.007281553398058249,
+     "covered": false,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 6.2
+    },
+    {
+     "seed": 2,
+     "winner": "linear",
+     "claimed": 0.9635416666666666,
+     "lo": 0.9322916666666666,
+     "hi": 0.9895833333333334,
+     "outer": 0.9781553398058253,
+     "baseline_outer": 0.5266990291262136,
+     "best_candidate_outer": 0.9927184466019418,
+     "regret": 0.014563106796116498,
+     "gap": 0.014613673139158623,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 5.8
+    },
+    {
+     "seed": 3,
+     "winner": "forest",
+     "claimed": 0.9895833333333334,
+     "lo": 0.9739583333333334,
+     "hi": 1.0,
+     "outer": 0.9805825242718447,
+     "baseline_outer": 0.5825242718446602,
+     "best_candidate_outer": 0.9902912621359223,
+     "regret": 0.009708737864077666,
+     "gap": 0.009000809061488702,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 6.3
     }
    ]
   },
@@ -174,7 +590,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 15.0
+     "seconds": 9.3
     },
     {
      "seed": 2,
@@ -196,7 +612,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 15.2
+     "seconds": 9.4
     },
     {
      "seed": 3,
@@ -218,7 +634,7 @@
       "false_alarms": 1
      },
      "leak_caught": true,
-     "seconds": 15.6
+     "seconds": 9.8
     }
    ]
   },
@@ -247,8 +663,8 @@
       "runs": 3,
       "false_alarms": 0
      },
-     "leak_caught": false,
-     "seconds": 35.3
+     "leak_caught": true,
+     "seconds": 28.3
     },
     {
      "seed": 2,
@@ -269,8 +685,8 @@
       "runs": 3,
       "false_alarms": 0
      },
-     "leak_caught": false,
-     "seconds": 37.3
+     "leak_caught": true,
+     "seconds": 29.7
     },
     {
      "seed": 3,
@@ -291,8 +707,82 @@
       "runs": 3,
       "false_alarms": 0
      },
-     "leak_caught": false,
-     "seconds": 35.4
+     "leak_caught": true,
+     "seconds": 28.0
+    }
+   ]
+  },
+  {
+   "dataset": "abalone",
+   "task": "regression",
+   "rows": 4177,
+   "columns": 9,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "linear",
+     "claimed": 0.5123263974255332,
+     "lo": 0.429883312571741,
+     "hi": 0.579089909140963,
+     "outer": 0.5156714711755855,
+     "baseline_outer": -0.00019682527224484936,
+     "best_candidate_outer": 0.5307306175148193,
+     "regret": 0.015059146339233775,
+     "gap": 0.0033450737500523298,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 9.2
+    },
+    {
+     "seed": 2,
+     "winner": "linear",
+     "claimed": 0.5125998112350729,
+     "lo": 0.43089727698588065,
+     "hi": 0.5799394384505137,
+     "outer": 0.5354320038938263,
+     "baseline_outer": -0.0010872578652108,
+     "best_candidate_outer": 0.5536247400149674,
+     "regret": 0.01819273612114114,
+     "gap": 0.02283219265875336,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 9.3
+    },
+    {
+     "seed": 3,
+     "winner": "linear",
+     "claimed": 0.5169830418678826,
+     "lo": 0.4211926906179402,
+     "hi": 0.5979864132582176,
+     "outer": 0.4740476912491456,
+     "baseline_outer": -0.0017781125104778805,
+     "best_candidate_outer": 0.5088274499041733,
+     "regret": 0.03477975865502769,
+     "gap": 0.04293535061873699,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 9.2
     }
    ]
   },
@@ -322,7 +812,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 16.6
+     "seconds": 10.9
     },
     {
      "seed": 2,
@@ -344,7 +834,7 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 16.7
+     "seconds": 11.0
     },
     {
      "seed": 3,
@@ -366,43 +856,10 @@
       "false_alarms": 0
      },
      "leak_caught": true,
-     "seconds": 16.8
+     "seconds": 11.0
     }
    ]
   }
  ],
- "skipped": [
-  {
-   "dataset": "blood-transfusion",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "phoneme",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "spambase",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "kc1",
-   "reason": "TypeError: expected string or bytes-like object, got 'bool'"
-  },
-  {
-   "dataset": "ilpd",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "qsar-biodeg",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "banknote",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  },
-  {
-   "dataset": "abalone",
-   "reason": "TypeError: expected string or bytes-like object, got 'int'"
-  }
- ]
+ "skipped": []
 }
