@@ -1,0 +1,61 @@
+name: Benchmark on public datasets
+
+# Runs Model Lab on public OpenML datasets (and California housing) and checks its claims against rows it never saw:
+# pick quality, stated-interval accuracy, false alarms on shuffled answers, and planted-leak detection.
+# No keys needed. Run it by hand from the Actions tab. Datasets that cannot be downloaded are listed as skipped.
+
+on:
+  workflow_dispatch:
+    inputs:
+      seeds:
+        description: "Comma-separated split seeds"
+        default: "1,2,3"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bench
+  cancel-in-progress: false
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[bench]"
+      - name: Run benchmark
+        run: python -m modellab.bench --seeds "${{ inputs.seeds }}"
+      - name: Report
+        if: always()
+        run: |
+          python - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          p = pathlib.Path("evals/results/summary.json")
+          if not p.exists():
+              print("No summary produced.")
+          else:
+              d = json.loads(p.read_text()); s = d["summary"]
+              print("| claim | result |\n|---|---|")
+              print(f"| datasets, runs | {s['datasets']}, {s['runs']} |")
+              print(f"| pick quality: median regret | {s['regret_median']*100:.2f} pts; within 2 pts in {s['regret_within_2pts']*100:.0f}% of runs |")
+              print(f"| stated score vs kept-back score: median gap | {s['gap_median']*100:.1f} pts; interval contained it {s['coverage']*100:.0f}% |")
+              print(f"| false alarms on shuffled answers | {s['false_alarms']} of {s['shuffled_runs']} |")
+              print(f"| planted leak caught | {s['leak_caught']} of {s['leak_runs']} |")
+              print(f"| false leak flags on clean data | {s['false_leak_flags']} of {s['clean_runs']} |")
+              print(f"| skipped datasets | {', '.join(x['dataset'] for x in d['skipped']) or 'none'} |")
+          PY
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A evals/results
+          git diff --cached --quiet || git commit -m "Benchmark results"
+          git pull --rebase -X theirs && git push

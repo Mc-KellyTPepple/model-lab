@@ -1,0 +1,16 @@
+[project]
+name = "model-lab"
+version = "0.1.0"
+description = "From spreadsheet to deployed model, with honesty checks: data profiling, leakage detection, cross-validated model comparison against a baseline, a held-out test score, drift monitoring."
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scikit-learn>=1.4"]
+
+[project.optional-dependencies]
+bench = ["pandas>=2.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
