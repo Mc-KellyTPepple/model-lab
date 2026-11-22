@@ -1,45 +1,47 @@
 {
  "service": "https://model-lab-u625.onrender.com",
- "first_health_seconds": 0.2,
+ "first_health_seconds": 0.3,
  "runs": [
   {
    "sample": "wine",
-   "seconds": 19.5,
+   "seconds": 18.9,
    "status": "done",
-   "server_seconds": 18.9,
+   "server_seconds": 17.8,
    "rows": 178,
    "skipped_models": []
   },
   {
    "sample": "breast_cancer",
-   "status": "failed",
-   "error": "HTTPError: HTTP Error 404: Not Found",
-   "seconds": 15.1
+   "seconds": 26.0,
+   "status": "done",
+   "server_seconds": 25.0,
+   "rows": 569,
+   "skipped_models": []
   },
   {
    "sample": "diabetes",
-   "seconds": 9.6,
+   "seconds": 10.2,
    "status": "done",
-   "server_seconds": 9.1,
+   "server_seconds": 9.6,
    "rows": 442,
    "skipped_models": []
   },
   {
    "sample": "churn",
-   "seconds": 25.8,
+   "seconds": 25.3,
    "status": "done",
-   "server_seconds": 24.7,
+   "server_seconds": 24.2,
    "rows": 1500,
    "skipped_models": []
   },
   {
    "sample": "churn_leaky",
-   "seconds": 27.0,
+   "seconds": 24.6,
    "status": "done",
-   "server_seconds": 26.1,
+   "server_seconds": 23.8,
    "rows": 1500,
    "skipped_models": []
   }
  ],
- "when": "2026-11-22 07:37 UTC"
+ "when": "2026-11-22 12:58 UTC"
 }
