@@ -1,0 +1,58 @@
+{
+ "summary": {
+  "datasets": 5,
+  "runs": 15,
+  "regret_median": 0.0,
+  "regret_mean": 0.002836166313978694,
+  "regret_within_2pts": 0.9333333333333333,
+  "gap_median": 0.011143177809844418,
+  "coverage": 0.8666666666666667,
+  "false_alarms": 1,
+  "shuffled_runs": 45,
+  "leak_caught": 12,
+  "leak_runs": 15,
+  "false_leak_flags": 0,
+  "clean_runs": 15,
+  "says_useful_and_is": 13,
+  "says_useful_but_isnt": 0
+ },
+ "skipped": [
+  {
+   "dataset": "blood-transfusion",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "phoneme",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "spambase",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "kc1",
+   "reason": "TypeError: expected string or bytes-like object, got 'bool'"
+  },
+  {
+   "dataset": "ilpd",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "qsar-biodeg",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "banknote",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "abalone",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

@@ -1,0 +1,408 @@
+{
+ "records": [
+  {
+   "dataset": "credit-g",
+   "task": "classification",
+   "rows": 1000,
+   "columns": 21,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "linear",
+     "claimed": 0.7571428571428571,
+     "lo": 0.6857142857142857,
+     "hi": 0.8285714285714286,
+     "outer": 0.7566666666666667,
+     "baseline_outer": 0.7133333333333334,
+     "best_candidate_outer": 0.7566666666666667,
+     "regret": 0.0,
+     "gap": 0.0004761904761904079,
+     "covered": true,
+     "says_beats_baseline": false,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 12.0
+    },
+    {
+     "seed": 2,
+     "winner": "linear",
+     "claimed": 0.66,
+     "lo": 0.5739519083604129,
+     "hi": 0.7442189144141923,
+     "outer": 0.6524951002562943,
+     "baseline_outer": 0.5,
+     "best_candidate_outer": 0.6575456053067994,
+     "regret": 0.005050505050505083,
+     "gap": 0.0075048997437057174,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 13.8
+    },
+    {
+     "seed": 3,
+     "winner": "forest",
+     "claimed": 0.7357142857142858,
+     "lo": 0.6641071428571428,
+     "hi": 0.8071428571428572,
+     "outer": 0.7466666666666667,
+     "baseline_outer": 0.7166666666666667,
+     "best_candidate_outer": 0.7533333333333333,
+     "regret": 0.006666666666666599,
+     "gap": 0.010952380952380936,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 13.5
+    }
+   ]
+  },
+  {
+   "dataset": "diabetes-pima",
+   "task": "classification",
+   "rows": 768,
+   "columns": 9,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "linear",
+     "claimed": 0.8148148148148148,
+     "lo": 0.7407407407407407,
+     "hi": 0.8888888888888888,
+     "outer": 0.7869565217391304,
+     "baseline_outer": 0.6347826086956522,
+     "best_candidate_outer": 0.8,
+     "regret": 0.013043478260869601,
+     "gap": 0.027858293075684326,
+     "covered": true,
+     "says_beats_baseline": false,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 8.4
+    },
+    {
+     "seed": 2,
+     "winner": "linear",
+     "claimed": 0.75,
+     "lo": 0.6666666666666666,
+     "hi": 0.8333333333333334,
+     "outer": 0.7478260869565218,
+     "baseline_outer": 0.6695652173913044,
+     "best_candidate_outer": 0.7739130434782608,
+     "regret": 0.02608695652173909,
+     "gap": 0.0021739130434782483,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 8.4
+    },
+    {
+     "seed": 3,
+     "winner": "linear",
+     "claimed": 0.7129629629629629,
+     "lo": 0.6203703703703703,
+     "hi": 0.7962962962962963,
+     "outer": 0.7608695652173914,
+     "baseline_outer": 0.5782608695652174,
+     "best_candidate_outer": 0.7608695652173914,
+     "regret": 0.0,
+     "gap": 0.04790660225442844,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 8.5
+    }
+   ]
+  },
+  {
+   "dataset": "vehicle",
+   "task": "classification",
+   "rows": 846,
+   "columns": 19,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "linear",
+     "claimed": 0.8403361344537815,
+     "lo": 0.773109243697479,
+     "hi": 0.907563025210084,
+     "outer": 0.7755905511811023,
+     "baseline_outer": 0.23228346456692914,
+     "best_candidate_outer": 0.7755905511811023,
+     "regret": 0.0,
+     "gap": 0.06474558327267921,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 15.0
+    },
+    {
+     "seed": 2,
+     "winner": "linear",
+     "claimed": 0.7815126050420168,
+     "lo": 0.7058823529411765,
+     "hi": 0.8571428571428571,
+     "outer": 0.7874015748031497,
+     "baseline_outer": 0.2283464566929134,
+     "best_candidate_outer": 0.7874015748031497,
+     "regret": 0.0,
+     "gap": 0.005888969761132845,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 15.2
+    },
+    {
+     "seed": 3,
+     "winner": "linear",
+     "claimed": 0.7310924369747899,
+     "lo": 0.6554621848739496,
+     "hi": 0.8069327731092435,
+     "outer": 0.7874015748031497,
+     "baseline_outer": 0.2283464566929134,
+     "best_candidate_outer": 0.7874015748031497,
+     "regret": 0.0,
+     "gap": 0.05630913782835978,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 1
+     },
+     "leak_caught": true,
+     "seconds": 15.6
+    }
+   ]
+  },
+  {
+   "dataset": "segment",
+   "task": "classification",
+   "rows": 2310,
+   "columns": 20,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 0.9938271604938271,
+     "lo": 0.9845679012345679,
+     "hi": 1.0,
+     "outer": 0.9826839826839827,
+     "baseline_outer": 0.12554112554112554,
+     "best_candidate_outer": 0.9826839826839827,
+     "regret": 0.0,
+     "gap": 0.011143177809844418,
+     "covered": false,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": false,
+     "seconds": 35.3
+    },
+    {
+     "seed": 2,
+     "winner": "boosting",
+     "claimed": 0.9907407407407407,
+     "lo": 0.9814814814814815,
+     "hi": 1.0,
+     "outer": 0.987012987012987,
+     "baseline_outer": 0.13275613275613277,
+     "best_candidate_outer": 0.987012987012987,
+     "regret": 0.0,
+     "gap": 0.003727753727753691,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": false,
+     "seconds": 37.3
+    },
+    {
+     "seed": 3,
+     "winner": "boosting",
+     "claimed": 0.9845679012345679,
+     "lo": 0.9691358024691358,
+     "hi": 0.9969135802469136,
+     "outer": 0.9725829725829725,
+     "baseline_outer": 0.12265512265512266,
+     "best_candidate_outer": 0.9725829725829725,
+     "regret": 0.0,
+     "gap": 0.011984928651595395,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": false,
+     "seconds": 35.4
+    }
+   ]
+  },
+  {
+   "dataset": "california-housing",
+   "task": "regression",
+   "rows": 20640,
+   "columns": 9,
+   "runs": [
+    {
+     "seed": 1,
+     "winner": "boosting",
+     "claimed": 0.759456419792392,
+     "lo": 0.679395602539593,
+     "hi": 0.8269602389514037,
+     "outer": 0.7725770939167451,
+     "baseline_outer": -0.0004862259722877571,
+     "best_candidate_outer": 0.7752765379655597,
+     "regret": 0.0026994440488146143,
+     "gap": 0.013120674124353138,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 16.6
+    },
+    {
+     "seed": 2,
+     "winner": "boosting",
+     "claimed": 0.7923995803250667,
+     "lo": 0.7361133312038454,
+     "hi": 0.8412785805524267,
+     "outer": 0.7818858156355655,
+     "baseline_outer": -8.607579176267421e-05,
+     "best_candidate_outer": 0.7785046886875844,
+     "regret": -0.0033811269479810946,
+     "gap": 0.01051376468950127,
+     "covered": true,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 16.7
+    },
+    {
+     "seed": 3,
+     "winner": "boosting",
+     "claimed": 0.6731747165950845,
+     "lo": 0.5759935621592935,
+     "hi": 0.7509985109494232,
+     "outer": 0.7934516177754116,
+     "baseline_outer": -0.004619237221495265,
+     "best_candidate_outer": 0.7858281888844781,
+     "regret": -0.007623428890933481,
+     "gap": 0.12027690118032708,
+     "covered": false,
+     "says_beats_baseline": true,
+     "really_beats_baseline": true,
+     "false_leak_flags": [],
+     "shuffled": {
+      "runs": 3,
+      "false_alarms": 0
+     },
+     "leak_caught": true,
+     "seconds": 16.8
+    }
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "dataset": "blood-transfusion",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "phoneme",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "spambase",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "kc1",
+   "reason": "TypeError: expected string or bytes-like object, got 'bool'"
+  },
+  {
+   "dataset": "ilpd",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "qsar-biodeg",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "banknote",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  },
+  {
+   "dataset": "abalone",
+   "reason": "TypeError: expected string or bytes-like object, got 'int'"
+  }
+ ]
+}
