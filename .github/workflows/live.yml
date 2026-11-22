@@ -1,0 +1,36 @@
+name: Time training on the live service
+
+# Trains each built-in sample on the deployed service and records how long a visitor waits. Run by hand; not scheduled.
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Service URL"
+        default: "https://model-lab-u625.onrender.com"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/live_check.py "${{ inputs.url }}" evals/results/live.json
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A evals/results/live.json
+          git diff --cached --quiet || git commit -m "Live timing results"
+          git pull --rebase -X theirs && git push
